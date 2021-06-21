@@ -42,7 +42,12 @@ for($i=1;$i<=12;$i++){
 }
 generate_CSV($data);
 
-/* Function to write to a CSV File */
+
+/**
+ * Description: Function to write to a CSV File
+ * Input: array of month and its corresponding salary & bonus dates
+ * Returns: Void
+ */
 function generate_CSV($data){
     /* Get filename as an arg from cli */
     $file_name = getopt("f:");
@@ -74,7 +79,11 @@ function generate_CSV($data){
     fclose($fileHandle);
 
 }
-/* Function to check if the date passed is a weekend */
+/**
+ * Description: Function to check if the date passed is a weekend.
+ * Input: Date
+ * Returns: Boolean, true if date is weekend else false.
+ */
 function is_weekend($date) {
      if(date('N', strtotime($date)) >= 6){
          return true;
